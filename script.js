@@ -102,9 +102,16 @@ document.getElementById('contact-content').classList.add('animate-fade-in');
 const modal = document.getElementById('imageModal');
 const modalImg = document.getElementById('modalImage');
 const galleryImages = [
-    'assets/couple2.jpg',
-    'assets/couple3.jpg',
-    'assets/couple1.jpg'
+    'ruth.jpg',
+    '2.jpg',
+    'calm.jpg',
+    '3.jpg',
+    '4.jpg',
+    '5.jpg',
+    '6.jpg',
+    '7.jpg',
+    '8.jpg'
+
 ];
 let currentImageIndex = 0;
 const galleryCaptions = [

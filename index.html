@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Longin & Ruth Wedding</title>
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="assets/hero-bg.jpg">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body class="bg-black text-white font-sans">
+    <!-- Mobile Navigation -->
+    <nav class="fixed top-0 left-0 w-full bg-black/90 backdrop-blur-md z-50 md:hidden">
+        <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+            <p class="text-red-500 font-serif text-xl">L & R</p>
+            <div id="mobile-menu" class="flex flex-row space-x-4">
+                <a href="#couple" class="text-base text-white/70 hover:text-red-500 transition-colors">Couple</a>
+                <a href="#venue" class="text-base text-white/70 hover:text-red-500 transition-colors">Venue</a>
+                <a href="#gallery" class="text-base text-white/70 hover:text-red-500 transition-colors">Gallery&Video</a>
+                <a href="#contact" class="text-base text-white/70 hover:text-red-500 transition-colors">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Desktop Navigation -->
+    <nav class="fixed top-0 left-0 w-full bg-black/80 backdrop-blur-md z-50 hidden md:block">
+        <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+            <p class="text-red-500 font-serif text-xl">Longin & Ruth</p>
+            <div class="flex space-x-8">
+                <a href="#couple"
+                    class="text-sm uppercase tracking-wider hover:text-red-500 transition-colors text-white/70">Couple</a>
+                <a href="#venue"
+                    class="text-sm uppercase tracking-wider hover:text-red-500 transition-colors text-white/70">Venue</a>
+                <a href="#gallery"
+                    class="text-sm uppercase tracking-wider hover:text-red-500 transition-colors text-white/70">Gallery&Video</a>
+                <a href="#contact"
+                    class="text-sm uppercase tracking-wider hover:text-red-500 transition-colors text-white/70">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="relative h-screen flex flex-col items-center justify-center text-center px-4 pt-16 hero-bg">
+        <div class="absolute inset-0 z-0">
+            <img src="2.jpg" alt="Longin & Ruth" class="w-full h-full object-cover">
+            <div class="absolute inset-0 bg-black/40 z-10"></div>
+            <div class="absolute inset-0 bg-gradient-to-b from-black/80 via-black/40 to-black"></div>
+            <div class="absolute inset-0 bg-gradient-radial z-10"></div>
+        </div>
+
+        <div class="z-10 relative">
+            <div id="hero-line" class="h-1 bg-red-500 mx-auto mb-6 w-0 animate-expand"></div>
+            <h1 id="hero-title"
+                class="font-serif text-4xl md:text-6xl lg:text-7xl text-white mb-4 tracking-wider opacity-0 animate-slide-up"
+                style="animation-delay: 0.5s;">Longin & Ruth</h1>
+            <p id="hero-subtitle"
+                class="text-xl md:text-2xl text-red-300 font-light mb-8 tracking-widest opacity-0 animate-fade-in"
+                style="animation-delay: 1s;">ARE GETTING MARRIED</p>
+            <div id="hero-date" class="flex items-center justify-center mb-10 opacity-0 animate-fade-in"
+                style="animation-delay: 1.5s;">
+                <div class="h-px w-16 bg-red-500 mr-4"></div>
+                <svg class="w-6 h-6 text-red-400 mx-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z">
+                    </path>
+                </svg>
+                <p class="text-red-300 font-medium mx-2">SEPTEMBER 14, 2025</p>
+                <div class="h-px w-16 bg-red-500 ml-4"></div>
+            </div>
+
+            <!-- Countdown Timer -->
+            <div id="countdown" class="flex justify-center gap-2 max-w-full mx-auto opacity-0 animate-fade-in px-1"
+                style="animation-delay: 2s;">
+                <!-- Months -->
+                <div class="flex flex-col items-center gap-2">
+                    <div
+                        class="countdown-box rounded-xl p-1 border border-red-500/30 hover:border-red-500/50 transition-all duration-300 flex items-center justify-center h-16 w-16 md:h-24 md:w-24">
+                        <span id="months"
+                            class="countdown-number block text-2xl md:text-5xl font-serif text-white">00</span>
+                    </div>
+                    <span
+                        class="countdown-label text-sm md:text-base text-red-300 uppercase tracking-wider text-center">Months</span>
+                </div>
+
+                <!-- Days -->
+                <div class="flex flex-col items-center gap-2">
+                    <div
+                        class="countdown-box rounded-xl p-1 border border-red-500/30 hover:border-red-500/50 transition-all duration-300 flex items-center justify-center h-16 w-16 md:h-24 md:w-24">
+                        <span id="days"
+                            class="countdown-number block text-2xl md:text-5xl font-serif text-white">00</span>
+                    </div>
+                    <span
+                        class="countdown-label text-sm md:text-base text-red-300 uppercase tracking-wider text-center">Days</span>
+                </div>
+
+                <!-- Hours -->
+                <div class="flex flex-col items-center gap-2">
+                    <div
+                        class="countdown-box rounded-xl p-1 border border-red-500/30 hover:border-red-500/50 transition-all duration-300 flex items-center justify-center h-16 w-16 md:h-24 md:w-24">
+                        <span id="hours"
+                            class="countdown-number block text-2xl md:text-5xl font-serif text-white">00</span>
+                    </div>
+                    <span
+                        class="countdown-label text-sm md:text-base text-red-300 uppercase tracking-wider text-center">Hours</span>
+                </div>
+
+                <!-- Minutes -->
+                <div class="flex flex-col items-center gap-2">
+                    <div
+                        class="countdown-box rounded-xl p-1 border border-red-500/30 hover:border-red-500/50 transition-all duration-300 flex items-center justify-center h-16 w-16 md:h-24 md:w-24">
+                        <span id="minutes"
+                            class="countdown-number block text-2xl md:text-5xl font-serif text-white">00</span>
+                    </div>
+                    <span
+                        class="countdown-label text-sm md:text-base text-red-300 uppercase tracking-wider text-center">Minutes</span>
+                </div>
+
+                <!-- Seconds -->
+                <div class="flex flex-col items-center gap-2">
+                    <div
+                        class="countdown-box rounded-xl p-1 border border-red-500/30 hover:border-red-500/50 transition-all duration-300 flex items-center justify-center h-16 w-16 md:h-24 md:w-24">
+                        <span id="seconds"
+                            class="countdown-number block text-2xl md:text-5xl font-serif text-white">00</span>
+                    </div>
+                    <span
+                        class="countdown-label text-sm md:text-base text-red-300 uppercase tracking-wider text-center">Seconds</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Discover Story Button -->
+    <section class="py-12 bg-gradient-to-b from-black to-gray-900 relative">
+        <div class="max-w-5xl mx-auto text-center">
+            <a href="#couple" id="discover-btn"
+                class="px-8 py-3 bg-red-500 text-white font-medium hover:bg-red-600 transition-colors duration-300 tracking-wider opacity-0 animate-slide-up"
+                style="animation-delay: 2s;">
+                DISCOVER OUR STORY
+            </a>
+        </div>
+    </section>
+
+    <!-- Couple Section -->
+    <section id="couple" class="py-20 bg-black relative overflow-hidden">
+        <div class="absolute inset-0 opacity-10">
+            <div class="absolute inset-0 bg-gradient-to-b from-red-500/20 to-transparent"></div>
+            <div class="grid grid-cols-8 h-full">
+                <div class="border-r border-red-500/20 h-full"></div>
+                <div class="border-r border-red-500/20 h-full"></div>
+                <div class="border-r border-red-500/20 h-full"></div>
+                <div class="border-r border-red-500/20 h-full"></div>
+                <div class="border-r border-red-500/20 h-full"></div>
+                <div class="border-r border-red-500/20 h-full"></div>
+                <div class="border-r border-red-500/20 h-full"></div>
+                <div class="border-r border-red-500/20 h-full"></div>
+            </div>
+        </div>
+
+        <!-- Content Container -->
+        <div class="max-w-6xl mx-auto px-4 relative">
+            <div class="text-center mb-16 opacity-0" id="couple-header">
+                <h2 class="font-serif text-3xl md:text-4xl text-white mb-4 tracking-wider">THE HAPPY COUPLE</h2>
+                <div class="flex items-center justify-center">
+                    <div class="h-px w-12 bg-red-500"></div>
+                    <svg class="w-6 h-6 text-red-400 mx-4 fill-red-500/20" fill="currentColor" viewBox="0 0 24 24">
+                        <path
+                            d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z" />
+                    </svg>
+                    <div class="h-px w-12 bg-red-500"></div>
+                </div>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-10 items-center">
+                <div class="space-y-6 text-center md:text-right opacity-0" id="couple-story">
+                    <h3 class="font-serif text-2xl text-red-300 mb-4">Our Story</h3>
+                    <p class="text-gray-300 leading-relaxed">
+                        <b>Longin: </b>
+                        From the first moment I saw Ruth,
+                        something inside me changed. She wasn't just
+                        beautiful—she had this calm, kind energy that
+                        made everything around her feel lighter.
+                        I told myself quietly, She's the one.
+                        But at that time, I knew the timing wasn't right.
+                        I didn't push or chase. I respected her space,
+                        waited patiently, and kept her in my prayers.
+                        I believed if it was meant to be, the moment would come.
+
+                        And it did. When I finally opened my heart to her,
+                        she looked at me with a gentle smile and said, I feel the same.
+                        That moment it felt like the world paused. From that day,
+                        my life found a new meaning. Now, we are walking together
+                        toward a beautiful future, and on <b>14 September 2025</b>,
+                        we will stand side by side and say I do.
+                    </p>
+                    <p class="text-gray-300 leading-relaxed">
+                        <b>Ruth:</b>
+                        He was so… silent. I hated it at first. I was used to boys who tried to impress me. Longin
+                        didn't even try. He just did the work—carried water, fixed broken things, stood in the
+                        background like he didn't matter. But somehow, I noticed him more than anyone.
+
+                        I tested him. I teased him. I wanted to know what he was hiding behind that calm face.
+
+                        No pressure. No flirting. Just care.
+
+                        And I knew—this wasn't a boy trying to win me. This was a man who was already giving himself.
+
+                        I started to fall for the way he listened. The way he never tried to change me. The way he
+                        looked at me like I was enough.
+
+                        Longin didn't say 'I love you' early. But every action, every silence, said it louder than
+                        words.
+                    </p>
+                    <div class="hidden md:block">
+                        <div class="w-20 h-1 bg-red-500 ml-auto mt-8"></div>
+                    </div>
+                </div>
+
+                <div class="relative opacity-0" id="couple-image">
+                    <div class="absolute inset-0 border border-red-500 transform translate-x-4 translate-y-4"></div>
+                    <div
+                        class="relative z-10 overflow-hidden bg-gray-800 h-[60vh] md:h-[80vh] flex items-center justify-center">
+                        <img src="1.jpg" alt="Longin & Ruth"
+                            style="max-height:100%; max-width:100%; object-fit:contain; display:block; margin:auto;">
+                    </div>
+                    <div class="absolute -bottom-4 -left-4 w-24 h-24 border border-red-500"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Venue Section -->
+    <section id="venue" class="py-20 bg-gradient-to-b from-black to-gray-900 relative">
+        <!-- Content Container -->
+        <div class="max-w-6xl mx-auto px-4 relative">
+            <div class="text-center mb-16 opacity-0" id="venue-header">
+                <h2 class="font-serif text-3xl md:text-4xl text-white mb-4 tracking-wider">JOIN US FOR OUR SPECIAL DAY
+                </h2>
+                <div class="flex items-center justify-center">
+                    <div class="h-px w-12 bg-red-500"></div>
+                    <svg class="w-6 h-6 text-red-400 mx-4 fill-red-500/20" fill="currentColor" viewBox="0 0 24 24">
+                        <path
+                            d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z" />
+                    </svg>
+                    <div class="h-px w-12 bg-red-500"></div>
+                </div>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-10 items-center">
+                <div class="rounded-lg overflow-hidden opacity-0" id="venue-map">
+                    <div
+                        class="w-full h-80 md:h-96 rounded-lg overflow-hidden border border-red-500/30 bg-gray-900 flex flex-col items-center justify-center p-6">
+                        <h3 class="font-serif text-2xl text-red-300 mb-2 text-center">Mariposa Garden</h3>
+                        <p class="text-gray-300 mb-4 text-center">3KG 648 Street, Kigali, Rwanda</p>
+                        <a href="https://www.google.com/maps/place/Mariposa+Garden/@-1.961571,30.0944882,47m/data=!3m1!1e3!4m6!3m5!1s0x19dca76b00920061:0x441d0ea61fad1d84!8m2!3d-1.9615258!4d30.0946529!16s%2Fg%2F11s5c_vxy2?entry=ttu&g_ep=EgoyMDI1MDYzMC4wIKXMDSoASAFQAw%3D%3D" target="_blank"
+                            class="px-6 py-3 bg-red-500 text-white font-medium hover:bg-red-600 transition-colors duration-300 tracking-wider rounded-lg flex items-center">
+                            View on Google Maps
+                            <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M9 5l7 7-7 7" />
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="space-y-6 opacity-0" id="venue-details">
+                    <div class="p-6 bg-gray-900/50 backdrop-blur-sm border border-red-500/30 rounded-lg">
+                        <h3 class="font-serif text-2xl text-red-300 mb-4">Venue</h3>
+                        <div class="flex items-start mb-4">
+                            <svg class="w-6 h-6 text-red-400 mr-3 mt-1 flex-shrink-0" fill="none" stroke="currentColor"
+                                viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                            </svg>
+                            <div>
+                                <p class="font-medium text-white">Mariposa Garden</p>
+                                <p class="text-gray-300">3KG 648 Street, Kigali, Rwanda</p>
+                                <a href="https://www.google.com/maps/place/Mariposa+Garden/@-1.961571,30.0944882,47m/data=!3m1!1e3!4m6!3m5!1s0x19dca76b00920061:0x441d0ea61fad1d84!8m2!3d-1.9615258!4d30.0946529!16s%2Fg%2F11s5c_vxy2?entry=ttu&g_ep=EgoyMDI1MDYzMC4wIKXMDSoASAFQAw%3D%3D" target="_blank"
+                                    class="text-red-400 text-sm flex items-center mt-2 hover:text-red-300 transition-colors">
+                                    View on Google Maps
+                                    <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M9 5l7 7-7 7" />
+                                    </svg>
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start mb-4">
+                            <svg class="w-6 h-6 text-red-400 mr-3 mt-1 flex-shrink-0" fill="none" stroke="currentColor"
+                                viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                            </svg>
+                            <div>
+                                <p class="font-medium text-white">Introduction & Dowry Giving</p>
+                                <p class="text-gray-300">9:00 AM</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start mb-4">
+                            <svg class="w-6 h-6 text-red-400 mr-3 mt-1 flex-shrink-0" fill="none" stroke="currentColor"
+                                viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                            </svg>
+                            <div>
+                                <p class="font-medium text-white">Church Ceremony - Paroisse Saint Famille</p>
+                                <p class="text-gray-300">2:00 PM</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start mb-4">
+                            <svg class="w-6 h-6 text-red-400 mr-3 mt-1 flex-shrink-0" fill="none" stroke="currentColor"
+                                viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                            </svg>
+                            <div>
+                                <p class="font-medium text-white">Reception</p>
+                                <p class="text-gray-300">4:30 PM</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start">
+                            <svg class="w-6 h-6 text-red-400 mr-3 mt-1 flex-shrink-0" fill="none" stroke="currentColor"
+                                viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+                            </svg>
+                            <div>
+                                <p class="font-medium text-white">For inquiries</p>
+                                <a href="https://wa.me/250787190366" class="flex items-center transition-colors">
+                                    <img src="longin.jpg" alt="WhatsApp Icon"
+                                        class="w-5 h-5 mr-2 object-cover rounded-full">
+                                    +250 787344599
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="p-6 bg-gray-900/50 backdrop-blur-sm border border-red-500/30 rounded-lg">
+                        <h3 class="font-serif text-2xl text-red-300 mb-4">Reception</h3>
+                        <p class="text-gray-300 mb-4 leading-relaxed">Following the church ceremony, please join us for
+                            dinner, dancing,
+                            and celebration.</p>
+                        <p class="text-gray-300 leading-relaxed">Cocktail hour begins at 5:00 PM, with dinner served at
+                            6:00 PM.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="gallery" class="py-20 bg-black relative">
+        <!-- Content Container -->
+        <div class="max-w-6xl mx-auto px-4 relative">
+            <div class="text-center mb-16 opacity-0" id="gallery-header">
+                <h2 class="font-serif text-3xl md:text-4xl text-white mb-4 tracking-wider">OUR JOURNEY TOGETHER</h2>
+                <div class="flex items-center justify-center">
+                    <div class="h-px w-12 bg-red-500"></div>
+                    <svg class="w-6 h-6 text-red-400 mx-4 fill-red-500/20" fill="currentColor" viewBox="0 0 24 24">
+                        <path
+                            d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z" />
+                    </svg>
+                    <div class="h-px w-12 bg-red-500"></div>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 opacity-0" id="gallery-grid">
+                <div class="group relative cursor-pointer overflow-hidden" onclick="openModal(0)">
+                    <div class="aspect-[3/4] relative overflow-hidden bg-gray-800">
+                        <img src="ruth.jpg" alt="Couple Photo 1" class="w-full h-full object-cover">
+                        <div
+                            class="absolute inset-0 border border-red-500/50 z-20 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                        </div>
+                        <div
+                            class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end z-10">
+                            <p class="text-white p-4 font-medium">She said Yes</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="group relative cursor-pointer overflow-hidden" onclick="openModal(1)">
+                    <div class="aspect-[3/4] relative overflow-hidden bg-gray-800">
+                        <img src="2.jpg" alt="Couple Photo 2" class="w-full h-full object-cover">
+                        <div
+                            class="absolute inset-0 border border-red-500/50 z-20 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                        </div>
+                        <div
+                            class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end z-10">
+                            <p class="text-white p-4 font-medium">Forever in Endless love</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="group relative cursor-pointer overflow-hidden" onclick="openModal(2)">
+                    <div class="aspect-[3/4] relative overflow-hidden bg-gray-800">
+                        <img src="2.jpg" alt="Couple Photo 3" class="w-full h-full object-cover">
+                        <div
+                            class="absolute inset-0 border border-red-500/50 z-20 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                        </div>
+                        <div
+                            class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end z-10">
+                            <p class="text-white p-4 font-medium">Calm, joy, love, strength with you.</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Wedding Video: Users can play this video directly in the gallery -->
+                <!--<div class="group relative cursor-pointer overflow-hidden">
+                    <div class="aspect-[3/4] relative overflow-hidden bg-gray-800 flex items-center justify-center">
+                        <video class="w-full h-full object-cover" controls poster="1.jpg">
+                            <source src="video.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                        <div class="absolute inset-0 border border-red-500/50 z-20 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end z-10">
+                            <p class="text-white p-4 font-medium">Our Wedding Video</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>-->
+
+
+    </section>
+
+    <!-- Contact Us Section -->
+    <section id="contact" class="py-20 bg-gradient-to-b from-gray-900 to-black relative">
+        <div class="max-w-3xl mx-auto text-center relative px-4">
+            <div class="opacity-0" id="contact-content">
+                <h2 class="font-serif text-3xl md:text-4xl text-white mb-4 tracking-wider">WE CAN'T WAIT TO CELEBRATE
+                    WITH YOU</h2>
+                <p class="text-gray-300 mb-8 leading-relaxed">Please contact us for any inquiries</p>
+
+                <div class="mt-12 flex flex-col md:flex-row items-center justify-center gap-6">
+                    <a href="https://wa.me/250787190366" class="flex items-center transition-colors hover:text-red-400">
+                        <img src="longin.jpg" alt="WhatsApp Icon" class="w-5 h-5 mr-2 object-cover rounded-full">
+                        <span>+250 787 344 599</span>
+                    </a>
+                    <a href="https://wa.me/250786130270" class="flex items-center transition-colors hover:text-red-400">
+                        <img src="ruth.jpg" alt="WhatsApp Icon" class="w-5 h-5 mr-2 object-cover rounded-full">
+                        <span>+250 783 576 499</span>
+                    </a>
+                    <a href="https://www.google.com/maps/place/Mariposa+Garden/@-1.961571,30.0944882,47m/data=!3m1!1e3!4m6!3m5!1s0x19dca76b00920061:0x441d0ea61fad1d84!8m2!3d-1.9615258!4d30.0946529!16s%2Fg%2F11s5c_vxy2?entry=ttu&g_ep=EgoyMDI1MDYzMC4wIKXMDSoASAFQAw%3D%3D" target="_blank"
+                        class="flex items-center text-red-300 hover:text-red-400 transition-colors">
+                        <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                        </svg>
+                        View Venue Location
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Image Modal -->
+    <div id="imageModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-image-container">
+                <img id="modalImage" class="modal-image" src="" alt="Gallery Image">
+            </div>
+            <div id="modalCaption" class="modal-caption"></div>
+            <span class="modal-close" onclick="closeModal()">&times;</span>
+            <div class="modal-nav modal-prev" onclick="navigateModal(-1)">❮</div>
+            <div class="modal-nav modal-next" onclick="navigateModal(1)">❯</div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="py-8 bg-black text-red-300 text-center border-t border-red-500/30">
+        <p class="tracking-widest mb-2">Longin & Ruth • SEPTEMBER 14, 2025</p>
+        <p class="text-xs text-gray-500">Developed by Olivier Niyonkuru</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

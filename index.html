@@ -412,20 +412,17 @@
                     </div>
                 </div>
                 <!-- Wedding Video: Users can play this video directly in the gallery -->
-                <div class="group relative cursor-pointer overflow-hidden">
-                    <div class="aspect-[3/4] relative overflow-hidden bg-gray-800 flex items-center justify-center">
-                        <video class="w-full h-full object-cover" controls poster="1.jpg">
-                            <source src="video.mp4" type="video/mp4">
-                            Your browser does not support the video tag.
-                        </video>
-                        <div class="absolute inset-0 border border-red-500/50 z-20 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                        <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end z-10">
-                            <p class="text-white p-4 font-medium">Our Wedding Video</p>
-                        </div>
+                <div class="aspect-[3/4] relative overflow-hidden bg-gray-800 flex items-center justify-center">
+                    <video class="w-full h-full object-cover" controls poster="1.jpg" style="z-index:10;">
+                        <source src="video.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                    <!-- Remove or set pointer-events: none on overlays so video controls are clickable -->
+                    <div class="absolute inset-0 border border-red-500/50 z-20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"></div>
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end z-10 pointer-events-none">
+                        <p class="text-white p-4 font-medium">Our Wedding Video</p>
                     </div>
                 </div>
-            </div>
-        </div>
 
 
     </section>

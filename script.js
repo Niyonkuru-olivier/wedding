@@ -110,25 +110,63 @@ const galleryImages = [
     '5.jpg',
     '6.jpg',
     '7.jpg',
-    '8.jpg'
-
+    '8.jpg',
+    '9.jpg',
+    '10.jpg',
+    '11.jpg',
+    '12.jpg',
+    '13.jpg',
+    '14.jpg',
+    '15.jpg',
+    'longin.jpg',
+    'video1.mp4', // <-- Added video file
+    'video.mp4'
 ];
 let currentImageIndex = 0;
 const galleryCaptions = [
     'Celebrating beauty',
     'Forever in love',
-    'Blessing in life'
+    'Blessing in life',
+    '', '', '', '', '', '', '', '', '', '', '', '', '', '',
+    'Our Wedding Video' // <-- Added caption for video
 ];
 
 function openModal(index) {
     currentImageIndex = index;
-    modalImg.src = galleryImages[index];
-    document.getElementById('modalCaption').textContent = galleryCaptions[index];
+    const isVideo = galleryImages[index].toLowerCase().endsWith('.mp4');
+    const modalImg = document.getElementById('modalImage');
+    let videoElem = document.getElementById('modalVideo');
+    if (isVideo) {
+        if (!videoElem) {
+            videoElem = document.createElement('video');
+            videoElem.id = 'modalVideo';
+            videoElem.controls = true;
+            videoElem.style.maxWidth = '100%';
+            videoElem.style.maxHeight = '80vh';
+            modalImg.style.display = 'none';
+            modalImg.parentNode.insertBefore(videoElem, modalImg);
+        }
+        videoElem.src = galleryImages[index];
+        videoElem.style.display = '';
+        modalImg.style.display = 'none';
+    } else {
+        if (videoElem) {
+            videoElem.style.display = 'none';
+            videoElem.pause && videoElem.pause();
+        }
+        modalImg.src = galleryImages[index];
+        modalImg.style.display = '';
+    }
+    document.getElementById('modalCaption').textContent = galleryCaptions[index] || '';
     modal.classList.add('active');
     document.body.style.overflow = 'hidden';
 }
 
 function closeModal() {
+    let videoElem = document.getElementById('modalVideo');
+    if (videoElem) {
+        videoElem.pause && videoElem.pause();
+    }
     modal.classList.remove('active');
     document.body.style.overflow = 'auto';
 }
@@ -136,8 +174,31 @@ function closeModal() {
 // Modal navigation functionality
 function navigateModal(direction) {
     currentImageIndex = (currentImageIndex + direction + galleryImages.length) % galleryImages.length;
-    modalImg.src = galleryImages[currentImageIndex];
-    document.getElementById('modalCaption').textContent = galleryCaptions[currentImageIndex];
+    const isVideo = galleryImages[currentImageIndex].toLowerCase().endsWith('.mp4');
+    const modalImg = document.getElementById('modalImage');
+    let videoElem = document.getElementById('modalVideo');
+    if (isVideo) {
+        if (!videoElem) {
+            videoElem = document.createElement('video');
+            videoElem.id = 'modalVideo';
+            videoElem.controls = true;
+            videoElem.style.maxWidth = '100%';
+            videoElem.style.maxHeight = '80vh';
+            modalImg.style.display = 'none';
+            modalImg.parentNode.insertBefore(videoElem, modalImg);
+        }
+        videoElem.src = galleryImages[currentImageIndex];
+        videoElem.style.display = '';
+        modalImg.style.display = 'none';
+    } else {
+        if (videoElem) {
+            videoElem.style.display = 'none';
+            videoElem.pause && videoElem.pause();
+        }
+        modalImg.src = galleryImages[currentImageIndex];
+        modalImg.style.display = '';
+    }
+    document.getElementById('modalCaption').textContent = galleryCaptions[currentImageIndex] || '';
 }
 
 // Close modal when clicking outside the content
